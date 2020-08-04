@@ -1,0 +1,19 @@
+server:
+  port: 8030
+
+spring:
+  application:
+    name: seata-tx-order
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.231:8848
+        namespace: 4afc9604-9a2d-4f6d-8aa3-dd7e941f2a7b
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        namespace: 4afc9604-9a2d-4f6d-8aa3-dd7e941f2a7b
+  profiles:
+    active: dev
